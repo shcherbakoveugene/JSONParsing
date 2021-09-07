@@ -1,0 +1,120 @@
+{
+	"releaseGroups": [
+		{
+			"name": "ReleaseGroup",
+			"releases": [
+				{
+					"name": "Test Release 1",
+					"length": "60",
+					"startDateOffset": "-183",
+					"sprints": [
+						{
+							"name": "S1",
+							"length": "14",
+							"startDateOffset": "-183"
+						},
+						{
+							"name": "S2",
+							"length": "14",
+							"startDateOffset": "-168"
+						}
+					]
+				},
+				{
+					"name": "Test Release 2",
+					"length": "60",
+					"startDateOffset": "-122",
+					"sprints": [
+						{
+							"name": "S3",
+							"length": "14",
+							"startDateOffset": "-122"
+						}
+					]
+				}
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "Parent",
+			"releaseGroup": "ReleaseGroup",
+			"reportFiles": [
+				{
+					"fileLocation": "MustPass.zip",
+					"startDateOffset": -186
+				},
+				{
+					"fileLocation": "JsonReport.zip",
+					"startDateOffset": -200
+				},
+				{
+					"fileLocation": "JsonAndHtmlReport.zip",
+					"startDateOffset": -200
+				}
+			],
+			"childProjects": [
+				{
+					"name": "Child",
+					"releaseGroup": "ReleaseGroup",
+					"reportFiles": [
+						{
+							"fileLocation": "Security.zip",
+							"startDateOffset": -158
+						}
+					],
+					"childProjects": [
+						{
+							"name": "ChildOfChild",
+							"releaseGroup": "ReleaseGroup",
+							"reportFiles": [
+								{
+									"fileLocation": "Other.zip",
+									"startDateOffset": -160
+								},
+								{
+									"fileLocation": "Other2.zip",
+									"startDateOffset": -149
+								}
+							],
+							"childProjects": null
+						}
+					]
+				}
+			],
+			"rootCauses": [
+				{
+					"name": "Name1",
+					"description": "Description1"
+				},
+				{
+					"name": "Name2",
+					"description": "Description2"
+				}
+			],
+			"epics": [
+				{
+					"name": "Epic 1",
+					"description": "Auto 1",
+					"sSizes": 10,
+					"startDateOffset": -183,
+					"releases": [
+						"Test Release 1",
+						"Test Release 2"
+					]
+				},
+				{
+					"name": "Epic 2",
+					"description": "Auto 2",
+					"sSizes": 15,
+					"startDateOffset": -183,
+					"releases": [
+						"Test Release 1",
+						"Test Release 2",
+						"Test Release 3"
+					]
+				}
+			]
+		}
+	]
+}
