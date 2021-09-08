@@ -1,10 +1,15 @@
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
 public class ReleaseGroups {
-    public String name;
-    public List<Releases> releases;
 
+    private String name;
+    private List<Releases> releases;
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Releases> getReleases() {
+        return releases;
+    }
 }
