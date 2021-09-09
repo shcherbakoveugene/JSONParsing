@@ -1,11 +1,12 @@
 
+import getters.JSONReleaseGroupsElementsGetter;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
-        JSONElementsGetter get = new JSONElementsGetter();
+        JSONReleaseGroupsElementsGetter get = new JSONReleaseGroupsElementsGetter();
         System.out.println(get.getSprintStartDateOffset(get.getReleasesNames().get(0)));
 //        Gson g = new GsonBuilder().create();
 //        JSONParser jsonParser = new JSONParser();
@@ -18,9 +19,9 @@ public class Main {
 ////        }
 //        JSon json = g.fromJson(new FileReader("settings.json"), JSon.class);
 
-//        for (ReleaseGroups el: new GsonBuilderHelper().getSettings().releaseGroups) {
-//            for (Releases releases1: el.releases) {
-//                for (Sprints sprints: releases1.sprints) {
+//        for (jsonModel.releaseGroups.ReleaseGroups el: new builder.GsonBuilderHelper().getSettings().releaseGroups) {
+//            for (jsonModel.releaseGroups.Releases releases1: el.releases) {
+//                for (jsonModel.releaseGroups.Sprints sprints: releases1.sprints) {
 //                    System.out.println(sprints.name);
 //                }
 //            }

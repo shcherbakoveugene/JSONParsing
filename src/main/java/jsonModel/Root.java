@@ -1,3 +1,8 @@
+package jsonModel;
+
+import jsonModel.projects.Projects;
+import jsonModel.releaseGroups.ReleaseGroups;
+
 import java.util.List;
 
 public class Root {

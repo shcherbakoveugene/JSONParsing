@@ -1,11 +1,18 @@
+package getters;
+
+import builder.GsonBuilderHelper;
+import jsonModel.releaseGroups.ReleaseGroups;
+import jsonModel.releaseGroups.Releases;
+import jsonModel.releaseGroups.Sprints;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class JSONElementsGetter {
+public class JSONReleaseGroupsElementsGetter {
 
     private GsonBuilderHelper gsonBuilderHelper;
 
-    public JSONElementsGetter() {
+    public JSONReleaseGroupsElementsGetter() {
         gsonBuilderHelper = new GsonBuilderHelper();
     }
 

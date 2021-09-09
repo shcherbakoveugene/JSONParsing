@@ -1,3 +1,5 @@
+package jsonModel.releaseGroups;
+
 public class Sprints {
 
     private String name;

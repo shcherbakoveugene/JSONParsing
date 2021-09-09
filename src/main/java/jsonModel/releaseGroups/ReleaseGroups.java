@@ -1,3 +1,5 @@
+package jsonModel.releaseGroups;
+
 import java.util.List;
 
 public class ReleaseGroups {
