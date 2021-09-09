@@ -12,17 +12,17 @@ public class JSONElementsGetter {
     public List<String> getReleaseGroupsNames() {
         List<String> names = new ArrayList<>();
 
-        for (ReleaseGroups name: gsonBuilderHelper.getRoot().getReleaseGroups()) {
+        for (ReleaseGroups name : gsonBuilderHelper.getRoot().getReleaseGroups()) {
             names.add(name.getName());
         }
 
         return names;
     }
 
-    public List<Releases> getReleases() {
+    private List<Releases> getReleases() {
         List<Releases> releases = new ArrayList<>();
 
-        for (ReleaseGroups relGroup: gsonBuilderHelper.getRoot().getReleaseGroups()) {
+        for (ReleaseGroups relGroup : gsonBuilderHelper.getRoot().getReleaseGroups()) {
             releases.addAll(relGroup.getReleases());
         }
 
@@ -32,7 +32,7 @@ public class JSONElementsGetter {
     public List<String> getReleasesNames() {
         List<String> names = new ArrayList<>();
 
-        for (Releases release: getReleases()) {
+        for (Releases release : getReleases()) {
             names.add(release.getName());
         }
 
@@ -42,7 +42,7 @@ public class JSONElementsGetter {
     public List<Integer> getReleasesLength() {
         List<Integer> lengths = new ArrayList<>();
 
-        for (Releases release: getReleases()) {
+        for (Releases release : getReleases()) {
             lengths.add(release.getLength());
         }
 
@@ -52,47 +52,49 @@ public class JSONElementsGetter {
     public List<Integer> getReleasesStartDateOffset() {
         List<Integer> lengths = new ArrayList<>();
 
-        for (Releases release: getReleases()) {
+        for (Releases release : getReleases()) {
             lengths.add(release.getLength());
         }
 
         return lengths;
     }
 
-    public List<Sprints> getSprints() {
+    private List<Sprints> getSprints(String releaseName) {
         List<Sprints> sprints = new ArrayList<>();
 
-        for (Releases release: getReleases()) {
-            sprints.addAll(release.getSprints());
+        for (Releases release : getReleases()) {
+            if (releaseName.equals(release.getName())) {
+                sprints.addAll(release.getSprints());
+            }
         }
 
         return sprints;
     }
 
-    public List<String> getSprintNames() {
+    public List<String> getSprintNames(String releaseName) {
         List<String> names = new ArrayList<>();
 
-        for (Sprints sprint: getSprints()) {
+        for (Sprints sprint : getSprints(releaseName)) {
             names.add(sprint.getName());
         }
 
         return names;
     }
 
-    public List<Integer> getSprintLength() {
+    public List<Integer> getSprintLength(String releaseName) {
         List<Integer> length = new ArrayList<>();
 
-        for (Sprints sprint: getSprints()) {
+        for (Sprints sprint : getSprints(releaseName)) {
             length.add(sprint.getLength());
         }
 
         return length;
     }
 
-    public List<Integer> getSprintStartDateOffset() {
+    public List<Integer> getSprintStartDateOffset(String releaseName) {
         List<Integer> startDateOffset = new ArrayList<>();
 
-        for (Sprints sprint: getSprints()) {
+        for (Sprints sprint : getSprints(releaseName)) {
             startDateOffset.add(sprint.getStartDateOffset());
         }
 
