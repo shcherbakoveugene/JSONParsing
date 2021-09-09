@@ -19,8 +19,8 @@ public class JSONReleaseGroupsElementsGetter {
     public List<String> getReleaseGroupsNames() {
         List<String> names = new ArrayList<>();
 
-        for (ReleaseGroups name : gsonBuilderHelper.getRoot().getReleaseGroups()) {
-            names.add(name.getName());
+        for (ReleaseGroups relGroup : gsonBuilderHelper.getRoot().getReleaseGroups()) {
+            names.add(relGroup.getName());
         }
 
         return names;

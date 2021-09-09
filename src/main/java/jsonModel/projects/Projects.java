@@ -6,10 +6,10 @@ public class Projects {
 
     private String name;
     private String releaseGroup;
-    private List<ReportFiles> reportFilesList;
-    private List<ChildProjects> childProjectsList;
-    private List<RootCauses> rootCausesList;
-    private List<Epics> epicsList;
+    private List<ReportFiles> reportFiles;
+    private List<ChildProjects> childProjects;
+    private List<RootCauses> rootCauses;
+    private List<Epics> epics;
 
     public String getName() {
         return name;
@@ -19,19 +19,19 @@ public class Projects {
         return releaseGroup;
     }
 
-    public List<ReportFiles> getReportFilesList() {
-        return reportFilesList;
+    public List<ReportFiles> getReportFiles() {
+        return reportFiles;
     }
 
-    public List<ChildProjects> getChildProjectsList() {
-        return childProjectsList;
+    public List<ChildProjects> getChildProjects() {
+        return childProjects;
     }
 
-    public List<RootCauses> getRootCausesList() {
-        return rootCausesList;
+    public List<RootCauses> getRootCauses() {
+        return rootCauses;
     }
 
-    public List<Epics> getEpicsList() {
-        return epicsList;
+    public List<Epics> getEpics() {
+        return epics;
     }
 }

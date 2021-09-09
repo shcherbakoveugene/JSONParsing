@@ -1,4 +1,5 @@
 
+import getters.JSONProjectElementsGetter;
 import getters.JSONReleaseGroupsElementsGetter;
 import org.json.simple.parser.ParseException;
 
@@ -7,7 +8,10 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
         JSONReleaseGroupsElementsGetter get = new JSONReleaseGroupsElementsGetter();
-        System.out.println(get.getSprintStartDateOffset(get.getReleasesNames().get(0)));
+        JSONProjectElementsGetter proj = new JSONProjectElementsGetter();
+        System.out.println(proj.getEpicNames());
+
+
 //        Gson g = new GsonBuilder().create();
 //        JSONParser jsonParser = new JSONParser();
 //        JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("settings.json"));
