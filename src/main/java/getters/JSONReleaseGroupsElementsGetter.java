@@ -26,50 +26,52 @@ public class JSONReleaseGroupsElementsGetter {
         return names;
     }
 
-    private List<Releases> getReleases() {
+    private List<Releases> getReleases(String releaseGroupName) {
         List<Releases> releases = new ArrayList<>();
 
         for (ReleaseGroups relGroup : gsonBuilderHelper.getRoot().getReleaseGroups()) {
-            releases.addAll(relGroup.getReleases());
+            if (releaseGroupName.equals(relGroup.getName())) {
+                releases.addAll(relGroup.getReleases());
+            }
         }
 
         return releases;
     }
 
-    public List<String> getReleasesNames() {
+    public List<String> getReleasesNames(String releaseGroupName) {
         List<String> names = new ArrayList<>();
 
-        for (Releases release : getReleases()) {
+        for (Releases release : getReleases(releaseGroupName)) {
             names.add(release.getName());
         }
 
         return names;
     }
 
-    public List<Integer> getReleasesLength() {
+    public List<Integer> getReleasesLength(String releaseGroupName) {
         List<Integer> lengths = new ArrayList<>();
 
-        for (Releases release : getReleases()) {
+        for (Releases release : getReleases(releaseGroupName)) {
             lengths.add(release.getLength());
         }
 
         return lengths;
     }
 
-    public List<Integer> getReleasesStartDateOffset() {
+    public List<Integer> getReleasesStartDateOffset(String releaseGroupName) {
         List<Integer> lengths = new ArrayList<>();
 
-        for (Releases release : getReleases()) {
+        for (Releases release : getReleases(releaseGroupName)) {
             lengths.add(release.getLength());
         }
 
         return lengths;
     }
 
-    private List<Sprints> getSprints(String releaseName) {
+    private List<Sprints> getSprints(String releaseName, String releaseGroupName) {
         List<Sprints> sprints = new ArrayList<>();
 
-        for (Releases release : getReleases()) {
+        for (Releases release : getReleases(releaseGroupName)) {
             if (releaseName.equals(release.getName())) {
                 sprints.addAll(release.getSprints());
             }
@@ -78,30 +80,30 @@ public class JSONReleaseGroupsElementsGetter {
         return sprints;
     }
 
-    public List<String> getSprintNames(String releaseName) {
+    public List<String> getSprintNames(String releaseName, String releaseGroupName) {
         List<String> names = new ArrayList<>();
 
-        for (Sprints sprint : getSprints(releaseName)) {
+        for (Sprints sprint : getSprints(releaseName, releaseGroupName)) {
             names.add(sprint.getName());
         }
 
         return names;
     }
 
-    public List<Integer> getSprintLength(String releaseName) {
+    public List<Integer> getSprintLength(String releaseName, String releaseGroupName) {
         List<Integer> length = new ArrayList<>();
 
-        for (Sprints sprint : getSprints(releaseName)) {
+        for (Sprints sprint : getSprints(releaseName, releaseGroupName)) {
             length.add(sprint.getLength());
         }
 
         return length;
     }
 
-    public List<Integer> getSprintStartDateOffset(String releaseName) {
+    public List<Integer> getSprintStartDateOffset(String releaseName, String releaseGroupName) {
         List<Integer> startDateOffset = new ArrayList<>();
 
-        for (Sprints sprint : getSprints(releaseName)) {
+        for (Sprints sprint : getSprints(releaseName, releaseGroupName)) {
             startDateOffset.add(sprint.getStartDateOffset());
         }
 
