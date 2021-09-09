@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
         JSONElementsGetter get = new JSONElementsGetter();
-        System.out.println(get.getSprints());
+        System.out.println(get.getSprintStartDateOffset());
 //        Gson g = new GsonBuilder().create();
 //        JSONParser jsonParser = new JSONParser();
 //        JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("settings.json"));

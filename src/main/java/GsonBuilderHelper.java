@@ -5,19 +5,19 @@ import java.io.FileReader;
 
 public class GsonBuilderHelper {
 
-    private Gson g;
-    private Settings settings;
+    private Gson gson;
+    private Root root;
 
     public GsonBuilderHelper() {
-        g = new com.google.gson.GsonBuilder().create();
+        gson = new com.google.gson.GsonBuilder().create();
         try {
-            settings = g.fromJson(new FileReader("settings.json"), Settings.class);
+            root = gson.fromJson(new FileReader("settings.json"), Root.class);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public Settings getSettings() {
-        return settings;
+    public Root getRoot() {
+        return root;
     }
 }
